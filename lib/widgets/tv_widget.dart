@@ -9,13 +9,13 @@ class TVWidget extends StatefulWidget {
       @required this.focusChange,
       @required this.onclick,
       @required this.decoration,
-      @required this.hasDecoration = true,
-      @required this.requestFocus = false})
+      this.hasDecoration = true,
+      this.requestFocus = false})
       : super(key: key);
 
   Widget child;
-  onFocusChange focusChange;
-  onClick onclick;
+  OnFocusChange focusChange;
+  OnClick onclick;
   bool requestFocus;
   BoxDecoration decoration;
   bool hasDecoration;
@@ -26,18 +26,18 @@ class TVWidget extends StatefulWidget {
   }
 }
 
-typedef void onFocusChange(bool hasFocus);
-typedef void onClick();
+typedef void OnFocusChange(bool hasFocus);
+typedef void OnClick();
 
 class TVWidgetState extends State<TVWidget> {
   FocusNode _focusNode;
   bool init = false;
-  var default_decoration = BoxDecoration(
+  BoxDecoration defaultDecoration = BoxDecoration(
       border: Border.all(width: 3, color: Colors.deepOrange),
       borderRadius: BorderRadius.all(
         Radius.circular(5),
       ));
-  var decoration = null;
+  BoxDecoration decoration;
 
   @override
   void initState() {
@@ -51,7 +51,7 @@ class TVWidgetState extends State<TVWidget> {
         setState(() {
           if (widget.hasDecoration) {
             decoration = widget.decoration == null
-                ? default_decoration
+                ? defaultDecoration
                 : widget.decoration;
           }
         });

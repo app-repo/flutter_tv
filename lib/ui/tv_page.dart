@@ -79,7 +79,8 @@ class TVPageState extends State<TVPage> with SingleTickerProviderStateMixin {
           ),
           primary: true,
           actions: <Widget>[
-            FlatButton(
+            TextButton(
+              onPressed: () {},
               child: Text(
                 '$timeString',
                 style: TextStyle(color: Colors.white),
@@ -254,7 +255,7 @@ class TVPageState extends State<TVPage> with SingleTickerProviderStateMixin {
   void dispose() {
     if (timer != null) {
       timer.cancel();
-      timer == null;
+      //timer = null;
     }
     super.dispose();
   }

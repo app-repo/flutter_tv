@@ -24,6 +24,7 @@ class ListPageState extends State<ListPage> with AutomaticKeepAliveClientMixin {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Container(
       color: Colors.black87,
       padding: EdgeInsets.fromLTRB(0, 0, 0, 0),

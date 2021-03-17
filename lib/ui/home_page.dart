@@ -24,6 +24,7 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Container(
       color: Colors.black87,
       child: Row(
@@ -80,7 +81,7 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
   _buildItem(int index) {
     return Expanded(
       child: TVWidget(
-          focusChange: (hasfocus) {},
+          focusChange: (bool hasFocus) {},
           child: Container(
             width: MediaQuery.of(context).size.width,
             child: GestureDetector(
@@ -159,7 +160,7 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
             },
           ),
         ),
-        focusChange: (hasfocus) {},
+        focusChange: (bool hasFocus) {},
       ),
       flex: flex,
     );
